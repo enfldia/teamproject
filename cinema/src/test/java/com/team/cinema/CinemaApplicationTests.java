@@ -1,10 +1,10 @@
-package com.teamProject.system;
+package com.team.cinema;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SystemApplicationTests {
+class CinemaApplicationTests {
 
 	@Test
 	void contextLoads() {

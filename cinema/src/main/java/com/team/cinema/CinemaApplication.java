@@ -1,13 +1,13 @@
-package com.teamProject.system;
+package com.team.cinema;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SystemApplication {
+public class CinemaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SystemApplication.class, args);
+		SpringApplication.run(CinemaApplication.class, args);
 	}
 
 }
