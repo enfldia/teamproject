@@ -17,11 +17,11 @@ public interface ItemRepository extends JpaRepository<Item, Long>, QuerydslPredi
 
     List<Item> findByPriceLessThanOrderByPriceDesc(Integer price);
 
-    @Query("select i from Item i where i.itemdetail like %:itemDetail% order by i.price desc")
+    @Query("select i from Item i where i.itemDetail like %:itemDetail% order by i.price desc")
     List<Item> findByItemDetail(@Param("itemDetail") String itemDetail);
 
     @Query(value = "select * from item i where i.item_detail lick %:itemDetail% order by i.price desc", nativeQuery = true)
-    List<Item> findByItemDetailBynative(@Param("itemDetail") String itemDetail);
+    List<Item> findByItemDetailByNative(@Param("itemDetail") String itemDetail);
 
 
 }
