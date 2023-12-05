@@ -5,7 +5,7 @@ import lombok.Setter;
 import project.constant.OrderStatus;
 
 import javax.persistence.*;
-import java.lang.reflect.Member;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
