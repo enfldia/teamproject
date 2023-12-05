@@ -19,7 +19,7 @@ public class ItemDto {
 
     private String sellStarCd;
 
-    private LocalDateTime regTime;
-
-    private LocalDateTime updateTime;
+//    private LocalDateTime regTime;
+//
+//    private LocalDateTime updateTime;
 }
