@@ -5,7 +5,6 @@ import lombok.Setter;
 import project.constant.OrderStatus;
 
 import javax.persistence.*;
-import java.lang.reflect.Member;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +20,8 @@ public class Order {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member  member;
+    @JoinColumn(name = "member_num")
+    private Member member;
 
     private LocalDateTime orderTime; //주문일
 

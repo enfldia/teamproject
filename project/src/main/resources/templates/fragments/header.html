@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<<<<<<< HEAD
-    <div th:fragments="header">
-=======
     <div th:fragment="header">
->>>>>>> develop
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Navbar</a>
@@ -31,8 +27,11 @@
                                 <li><a class="dropdown-item" href="#">Something else here</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                        <li class="nav-item" sec:authorize="isAnonymous()">
+                            <a class="nav-link" aria-current="page" href="/csCenter/notices">C/S</a>
+                        </li>
+                        <li class="nav-item" sec:authorize="hasAnyAuthority('ROLE_ADMIN')">
+                            <a class="nav-link" aria-current="page" href="/admin/notices">ADMIN</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
