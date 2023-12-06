@@ -14,11 +14,16 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Table(name = "member")
-public class Member {
+//Auditing 기능을 적용하기 위해 BaseEntity 상속시킴 12/6 상현
+
+public class Member extends BaseEntity{
+
     @Id
     @Column(name = "member_num")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long num;
+//    private Long num;
+    private Long Id; //교재에는 id 로 되어있어서 바꿨습니다. - 상현
+
 
     private String name;
 

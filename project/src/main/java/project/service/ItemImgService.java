@@ -39,5 +39,5 @@ public class ItemImgService {
         //상품 이미지 정보 저장
         itemImg.updateItemImg(oriImgName,imgName,imgUrl);
         itemImgRepository.save(itemImg);
-    }
+    } //6장  47페이지
 }

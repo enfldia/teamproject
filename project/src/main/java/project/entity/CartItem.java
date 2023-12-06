@@ -9,7 +9,8 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "cart_item")
-public class CartItem {
+//Auditing 기능을 적용하기 위해 BaseEntity 상속시킴 12/6 상현
+public class CartItem extends BaseEntity {
 
     @Id
     @GeneratedValue
