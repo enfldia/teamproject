@@ -13,7 +13,8 @@ import java.util.List;
 @Getter
 @Setter
 @Table(name = "orders")
-public class Order {
+//Auditing 기능을 적용하기 위해 BaseEntity 상속시킴 12/6 상현
+public class Order extends BaseEntity{
 
     @Id
     @Column(name = "order_id")
@@ -28,9 +29,7 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus; //주문상태
 
-    private LocalDateTime regTime;
 
-    private LocalDateTime updateTime;
 
     @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true) //orderItems의 order에 의해 관리된다.
     private List<OrderItem> orderItems = new ArrayList<>();

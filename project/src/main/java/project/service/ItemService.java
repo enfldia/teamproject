@@ -43,7 +43,7 @@ public class ItemService {
     }
 
     @Transactional(readOnly = true)
-    public ItemFormDto getItemDtl(long itemId){
+    public ItemFormDto getItemDtl(Long itemId){
 
         List<ItemImg> itemImgList = itemImgRepository.findByItemIdOrderByIdAsc(itemId);
         //해당 상품 이미지를 조회 해서 등록순으로 가지고 오기 위해서 상품 이미지 아이디 오름차순으로 가지고옴

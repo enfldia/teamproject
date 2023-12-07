@@ -29,7 +29,7 @@ public class OrderItem {
 
     private int count; //수량
 
-    private LocalDateTime regTime;
-
-    private LocalDateTime updateTime;
+//    private LocalDateTime regTime;
+//      Auditing 으로 시간 관련된 것 들 삭제
+//    private LocalDateTime updateTime;
 }
