@@ -1,6 +1,7 @@
 package project.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.parameters.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import project.dto.ItemFormDto;
 import project.service.ItemService;
 
+import javax.naming.Binding;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -64,5 +66,24 @@ public class itemController {
             return "item/itemForm";
         }
         return "item/itemForm";
+    }
+
+    @PostMapping(value = "/admin/item/{itemId}")
+    public String itemUpdate(@Valid ItemFormDto itemFormDto, BindingResult bindingResult,
+                             @RequestParam("itemImgFile") List<MultipartFile> itemImgFileList, Model model){
+        if(bindingResult.hasErrors()){
+            return "item/itemForm";
+        }
+        if(itemImgFileList.get(0).isEmpty() && itemFormDto.getId() == null){
+            model.addAttribute("errorMessage", "첫번째 상품 이미지는 필수 입력 값입니다.");
+            return "item/itemForm";
+        }
+        try{
+            itemService.updateItem(itemFormDto, itemImgFileList);
+        } catch (Exception e){
+            model.addAttribute("errorMessage", "상품 수정 중 에러가 발생하였습니다.");
+            return "item/itemForm";
+        }
+        return "redirect:/";
     }
 }
